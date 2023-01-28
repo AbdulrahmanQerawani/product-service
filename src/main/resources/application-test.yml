@@ -1,15 +1,27 @@
-spring:
-  application:
-    name: product-service
-  profiles:
-    active:
-        - 'dev'
-  config:
-    import: optional:configserver:http://configserver:8071
-
+#spring:
+#  application:
+#    name: product-service
+#  profiles:
+#    active:
+#        - 'dev'
+#  config:
+#    import: optional:configserver:http://configserver:8071
 #  cloud:
 #    config:
 #      uri: http://configserver:8071
+eureka:
+  client:
+    register-with-eureka: false
+
+
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: false
+
+
+
 logging:
   level:
     com.netflix: WARN
